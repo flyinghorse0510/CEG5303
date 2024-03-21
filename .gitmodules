@@ -1,0 +1,6 @@
+[submodule "Project1/json2yolo_ceg5301"]
+	path = Project1/json2yolo_ceg5301
+	url = https://github.com/flyinghorse0510/JSON2YOLO.git
+[submodule "Project1/yolov7_ceg5301"]
+	path = Project1/yolov7_ceg5301
+	url = https://github.com/flyinghorse0510/yolov7_ceg5301.git
