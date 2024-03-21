@@ -1,0 +1,16 @@
+*.docx
+slprj/
+*.slxc
+*.asv
+*.autosave
+*.fdb_latexmk
+*.fls
+*.log
+report.pdf
+*.synctex.gz
+.DS_Store
+*.aux
+*.out
+*.bbl
+*.blg
+*.toc
