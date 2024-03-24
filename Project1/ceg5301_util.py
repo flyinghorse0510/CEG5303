@@ -144,10 +144,10 @@ def recursive_load_yaml(file: str) -> dict:
 
 
 # dump yaml configs to specific file
-def dump_config(path: str, configDict: dict):
+def dump_config(path: str, configDict: dict, default_flow_style = False):
     # dump the final yaml configs to file
     configDictFile = open(path, "w")
-    yaml.dump(configDict, configDictFile, default_flow_style=False)
+    yaml.dump(configDict, configDictFile, default_flow_style=default_flow_style)
     configDictFile.close()
 
 
@@ -233,6 +233,20 @@ def download_to_dir(url: str, targetDir: str) -> str:
     # return the file path
     return filePath
 
+# get the list of files with (optionally) specified file-name extension under the given directory (non-recursive)
+def get_file_list(targetDir: str, fileExtList: list = None):
+    fileList = [os.path.join(targetDir, f) for f in os.listdir(targetDir) if os.path.isfile(os.path.join(targetDir, f))]
+    if fileExtList is not None and len(fileExtList) > 0:
+        filteredFileList = []
+        for filePath in fileList:
+            fileExt = os.path.splitext(filePath)[1]
+            for ext in fileExtList:
+                if ext == fileExt:
+                    filteredFileList.append(filePath)
+                    break
+        return filteredFileList
+    else:
+        return fileList
 
 # extract the archived file into specific directory
 def extract_to_dir(archivedFilePath: str, targetDir: str) -> bool:
