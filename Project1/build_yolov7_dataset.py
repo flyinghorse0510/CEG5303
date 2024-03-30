@@ -149,8 +149,8 @@ if __name__ == "__main__":
 
     ###### Enable if necessary ######
     # increase the `numProc` appropriately to speed up the download
-    ceg5301_util.clean_dir(datasetDataPath)
-    download_datasets(datasetConfigPath, datasetDataPath, numProc=64)
+    # ceg5301_util.clean_dir(datasetDataPath)
+    # download_datasets(datasetConfigPath, datasetDataPath, numProc=64)
     #################################
 
     # download pre-trained model for transer-learning
