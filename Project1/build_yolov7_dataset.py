@@ -110,7 +110,7 @@ def split_train_val(superKeyName: list, valRatio: float = 0.2):
     trainConfigDict = {
         "train": os.path.join(".", "fathomnet_2023_dataset", "train_ceg5301.txt"),
         "val": os.path.join(".", "fathomnet_2023_dataset", "val_ceg5301.txt"),
-        "test": "",
+        "test": os.path.join(".", "fathomnet_2023_dataset", "val_ceg5301.txt"),
         "nc": len(superKeyName),
         "names": superKeyName
     }
@@ -149,8 +149,8 @@ if __name__ == "__main__":
 
     ###### Enable if necessary ######
     # increase the `numProc` appropriately to speed up the download
-    # ceg5301_util.clean_dir(datasetDataPath)
-    # download_datasets(datasetConfigPath, datasetDataPath, numProc=48)
+    ceg5301_util.clean_dir(datasetDataPath)
+    download_datasets(datasetConfigPath, datasetDataPath, numProc=64)
     #################################
 
     # download pre-trained model for transer-learning
